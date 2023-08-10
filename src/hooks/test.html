@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div draggable="true">12312</div>
+  <div id="dropZone" style="width: 300px; height: 200px; border: 2px dashed #ccc;">
+    Drop here
+  </div>
+
+  <script>
+    const dropZone = document.getElementById('dropZone');
+
+    dropZone.addEventListener('dragover', function (event) {
+      event.preventDefault(); // 阻止默认行为，允许放置
+      dropZone.style.border = '2px dashed blue'; // 改变样式以表示可以放置
+    });
+
+    dropZone.addEventListener('dragleave', function () {
+      dropZone.style.border = '2px dashed #ccc'; // 拖拽离开时恢复样式
+    });
+
+    window.addEventListener("mousemove", () => console.log(33))
+    window.addEventListener("touchstart", () => console.log(44))
+    window.addEventListener("touchmove", () => console.log(44))
+  </script>
+</body>
+
+</html>
